@@ -10,7 +10,7 @@
 #define MASCARA_RING  (TAM_RING - 1)
 #define INTERVALO_MS  20             // ~50 análises/atualizações por segundo
 #define DEBUG_SERIAL  0              // 1 = imprime as barras no Serial
-#define DEGRADE_HORIZONTAL 1         // 1 = vermelho(grave)->verde(agudo) na horizontal; 0 = degradê vertical antigo
+#define DEGRADE_HORIZONTAL 1         // 1 = vermelho(grave)->verde(agudo) na horizontal; 0 = degradê vertical
 
 // ---------- Pinos ----------
 #define LED_PIN   5
@@ -53,7 +53,6 @@ void drawBar(int x, int h) {
   }
 }
 
-// NOVO: desenha as 8 barras e atualiza a matriz
 void desenharBarras();
 
 // ---------- Áudio / Bluetooth ----------
@@ -179,7 +178,7 @@ void calcularAlturas() {
   }
 }
 
-// ---------- NOVO: alturas -> LEDs ----------
+// ---------- Alturas -> LEDs ----------
 void desenharBarras() {
   FastLED.clear();
   for (int b = 0; b < NUM_BANDS; b++) {
@@ -239,7 +238,7 @@ void loop() {
       for (int b = 0; b < NUM_BANDS; b++) bandas[b] = 0;
     }
     calcularAlturas();
-    desenharBarras();                // NOVO
+    desenharBarras();                
   }
 
 #if DEBUG_SERIAL
