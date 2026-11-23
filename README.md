@@ -19,6 +19,7 @@ Projeto acadêmico: um **ESP32** que funciona como caixa de som Bluetooth e most
 - Amplificador I2S MAX98357A
 - Alto-falante de 3 W / 4 Ω
 - Protoboards e jumpers
+- Resistor para proteção dos LEDS
 - Recomendado: capacitor eletrolítico
 
 ## Ligações
